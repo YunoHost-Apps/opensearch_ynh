@@ -1,15 +1,50 @@
 [Unit]
-Description=Small description of the service
+Description=OpenSearch - Open source distributed and RESTful search engine
+Documentation=https://opensearch.org
 After=network.target
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
+Environment="OPENSEARCH_JAVA_HOME=__FINALPATH__/jdk"
+Environment="OPENSEARCH_PATH_CONF=__FINALPATH__/config"
+Environment="PID_DIR=/run/__APP__"
+Environment="OPENSEARCH_SD_NOTIFY=true"
 WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/script
+ExecStart=__FINALPATH__/bin/opensearch -p ${PID_DIR}/__APP__.pid --quiet
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
+
+# Specifies the maximum file descriptor number that can be opened by this process
+LimitNOFILE=65535
+
+# Specifies the maximum number of processes
+LimitNPROC=4096
+
+# Specifies the maximum size of virtual memory
+LimitAS=infinity
+
+# Specifies the maximum file size
+LimitFSIZE=infinity
+
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=0
+
+# SIGTERM signal is used to stop the Java process
+KillSignal=SIGTERM
+
+# Send the signal only to the JVM rather than its control group
+KillMode=process
+
+# Java process is never killed
+SendSIGKILL=no
+
+# When a JVM receives a SIGTERM signal it exits with code 143
+SuccessExitStatus=143
+
+# Allow a slow startup before the systemd notifier module kicks in to extend the timeout
+TimeoutStartSec=75
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these

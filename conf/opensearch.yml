@@ -1,0 +1,25 @@
+# Bind OpenSearch to the correct network interface. Use 0.0.0.0
+# to include all available interfaces or specify an IP address
+# assigned to a specific interface.
+network.host: 127.0.0.1
+
+#
+# Set a custom port for HTTP:
+#
+http.port: __PORT__
+
+#
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+path.data: __DATADIR__
+
+#
+# Unless you have already configured a cluster, you should set
+# discovery.type to single-node, or the bootstrap checks will
+# fail when you try to start the service.
+discovery.type: single-node
+
+# If you previously disabled the security plugin in opensearch.yml,
+# be sure to re-enable it. Otherwise you can skip this setting.
+plugins.security.disabled: true
+
