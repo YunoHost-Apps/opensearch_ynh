@@ -42,6 +42,16 @@ port=$(ynh_find_port --port=9200)
 ynh_app_setting_set --app=$app --key=port --value=$port
 
 #=================================================
+# DEFAULT VALUES FOR CONFIGURATION
+#=================================================
+
+xms=256m
+ynh_app_setting_set --app=$app --key=xms --value=$xms
+
+xmx=1g
+ynh_app_setting_set --app=$app --key=xmx --value=$xmx
+
+#=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing dependencies..." --weight=1
@@ -98,14 +108,15 @@ chmod 700 "/run/$app"
 chown $app:$app "/run/$app"
 
 #=================================================
-# ADD A CONFIGURATION
+# ADD CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression --message="Adding the configuration files..." --weight=1
 
 ynh_add_config --template="opensearch.yml" --destination="$final_path/config/opensearch.yml"
+ynh_add_config --template="jvm.options" --destination="$final_path/config/jvm.options.d/yunohost.options"
 
-chmod 400 "$final_path/config/opensearch.yml"
-chown $app:$app "$final_path/config/opensearch.yml"
+chmod 400 "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
+chown $app:$app "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
 
 #=================================================
 # SETUP SYSTEMD
