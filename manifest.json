@@ -15,7 +15,7 @@
         "admindoc": "https://opensearch.org/docs/latest/",
         "code": "https://github.com/opensearch-project/OpenSearch"
     },
-    "license": "GPL-3.0",
+    "license": "AGPL-3.0-or-later",
     "maintainer": {
         "name": "fflorent",
         "email": "florent.git@zeteo.me"
