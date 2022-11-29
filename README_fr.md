@@ -29,11 +29,6 @@ Some long and extensive description of what the app is and does, lorem ipsum dol
 **Version incluse :** 1.0~ynh1
 
 **Démo :** https://playground.opensearch.org/app/home
-
-## Captures d'écran
-
-![Capture d'écran de OpenSearch](./doc/screenshots/example.jpg)
-
 ## Avertissements / informations importantes
 
 * Any known limitations, constrains or stuff not working, such as (but not limited to):
