@@ -57,6 +57,12 @@ ynh_backup --src_path="$datadir" --is_big
 ynh_backup --src_path="/etc/logrotate.d/$app"
 
 #=================================================
+# BACKUP VARIOUS FILES
+#=================================================
+
+ynh_backup --src_path="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+
+#=================================================
 # BACKUP SYSTEMD
 #=================================================
 

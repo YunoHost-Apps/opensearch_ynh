@@ -19,6 +19,8 @@ app=$YNH_APP_INSTANCE_NAME
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 datadir=$(ynh_app_setting_get --app=$app --key=datadir)
 port=$(ynh_app_setting_get --app=$app --key=port)
+xms=$(ynh_app_setting_get --app=$app --key=xms)
+xmx=$(ynh_app_setting_get --app=$app --key=xmx)
 
 #=================================================
 # CHECK VERSION
@@ -92,7 +94,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=20
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --keep="config/opensearch.yml"
+	ynh_setup_source --dest_dir="$final_path" --source_id="$YNH_ARCH" --keep="config/opensearch.yml config/jvm.options.d/yunohost.conf"
 fi
 
 chmod 750 "$final_path"
@@ -112,9 +114,23 @@ ynh_install_app_dependencies $pkg_dependencies
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 ynh_add_config --template="opensearch.yml" --destination="$final_path/config/opensearch.yml"
+ynh_add_config --template="jvm.options" --destination="$final_path/config/jvm.options.d/yunohost.options"
 
-chmod 400 "$final_path/config/opensearch.yml"
-chown $app:$app "$final_path/config/opensearch.yml"
+chmod 400 "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
+chown $app:$app "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
+
+#=================================================
+# INCREASE MAX_MAP_COUNT
+#=================================================
+ynh_script_progression --message="Increasing maximum map count (sysctl)..."
+
+# Increase the maximum number of files inotify can monitor.
+cp -a ../conf/90-max_map_count-opensearch.conf /etc/sysctl.d/
+# Then, reload the kernel configuration.
+if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+then
+	sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
+fi
 
 #=================================================
 # SETUP SYSTEMD

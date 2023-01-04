@@ -1,0 +1,37 @@
+version = "1.0"
+
+[main]
+
+name.en = "OpenSearch configuration"
+name.fr = "Configuration d'OpenSearch"
+
+services = ["__APP__"]
+
+    [main.jvm]
+    name.en = "JVM (Java Virtual Machine) configuration"
+    name.fr = "Configuration de la JVM (machine virtuelle Java)"
+    optional = false
+
+        [main.jvm.xms]
+        ask.en = "Initial heap space"
+        ask.fr = "Espace initial réservé pour le tas (ou « Heap »)"
+        help = """\
+        Indicate a size followed by a unit (either m for megabytes or g for gigabytes) with no space. Examples: \
+         "512m"\
+         "2g"\
+        """
+        type = "string"
+        pattern.regexp = '^(\d+)[mMgG]$'
+        pattern.error = "Please respect the format describe in help text"
+
+        [main.jvm.xmx]
+        ask.en = "Maximum heap space"
+        ask.fr = "Espace maximal pour le tas (ou « Heap »)"
+        help = """\
+        Indicate a size followed by a unit (either m for megabytes or g for gigabytes) with no space. Examples: \
+         "512m"\
+         "2g"\
+        """
+        type = "string"
+        pattern.regexp = '^(\d+)[mMgG]$'
+        pattern.error = "Please respect the format describe in help text"

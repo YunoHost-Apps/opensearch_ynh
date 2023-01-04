@@ -1,0 +1,6 @@
+SOURCE_URL=https://artifacts.opensearch.org/releases/bundle/opensearch/2.4.1/opensearch-2.4.1-linux-x64.tar.gz
+SOURCE_SUM=f2b71818ad84cdab1b736211efbdd79d33835a92d46f66a237fa1182d012410d
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=
