@@ -71,10 +71,6 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 #=================================================
 ynh_script_progression --message="Setting up source files..." --weight=15
 
-### `ynh_setup_source` is used to install an app from a zip or tar.gz file,
-### downloaded from an upstream source, like a git repository.
-### `ynh_setup_source` use the file conf/app.src
-
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$final_path" --source_id="$YNH_ARCH"
@@ -117,6 +113,21 @@ ynh_add_config --template="jvm.options" --destination="$final_path/config/jvm.op
 
 chmod 400 "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
 chown $app:$app "$final_path/config/opensearch.yml" "$final_path/config/jvm.options.d/yunohost.options"
+
+
+#=================================================
+# INCREASE MAX_MAP_COUNT
+#=================================================
+ynh_script_progression --message="Increasing maximum map count (sysctl)..."
+
+# Increase the maximum number of files inotify can monitor.
+cp -a ../conf/90-max_map_count-opensearch.conf /etc/sysctl.d/
+# Then, reload the kernel configuration.
+if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+then
+	sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
+fi
+
 
 #=================================================
 # SETUP SYSTEMD

@@ -93,6 +93,18 @@ ynh_script_progression --message="Reinstalling dependencies..." --weight=1
 # Define and install dependencies
 ynh_install_app_dependencies $pkg_dependencies
 
+
+#=================================================
+# RESTORE VARIOUS FILES
+#=================================================
+ynh_script_progression --message="Restoring various files..."
+
+ynh_restore_file --origin_path="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+then
+	sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
+fi
+
 #=================================================
 # RESTORE SYSTEMD
 #=================================================
