@@ -3,8 +3,8 @@
     "id": "opensearch",
     "packaging_format": 1,
     "description": {
-        "en": "Open source distributed and RESTful search engine.",
-        "fr": "Moteur de recherche RESTful et open-source."
+        "en": "Open source distributed and RESTful search engine",
+        "fr": "Moteur de recherche RESTful et open-source"
     },
     "version": "2.4.1~ynh2",
     "url": "https://github.com/opensearch-project/OpenSearch",
