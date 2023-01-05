@@ -104,6 +104,22 @@ ynh_script_progression --message="Removing the dedicated system user..." --weigh
 ynh_system_user_delete --username=$app
 
 #=================================================
+# SPECIFIC REMOVE
+#=================================================
+# REMOVE VARIOUS FILES
+#=================================================
+ynh_script_progression --message="Removing various files..."
+
+if [ -e "/etc/sysctl.d/90-max_map_count-opensearch.conf" ]; then
+	ynh_secure_remove --file="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+	# Reload the kernel configuration.
+	if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+	then
+		sysctl --system
+	fi
+fi
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
