@@ -116,7 +116,7 @@ ynh_script_progression --message="Increasing maximum map count (sysctl)..."
 # Increase the maximum number of files inotify can monitor.
 cp -a ../conf/90-max_map_count-opensearch.conf /etc/sysctl.d/
 # Then, reload the kernel configuration.
-if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+if ! [ "$container" = "lxc" ] # lxc doesn't allow sysctl to play with kernel options.
 then
 	sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
 fi
