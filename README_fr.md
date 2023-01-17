@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # OpenSearch pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/opensearch.svg)](https://dash.yunohost.org/appci/app/opensearch) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/opensearch.svg)](https://dash.yunohost.org/appci/app/opensearch) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)  
 [![Installer OpenSearch avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=opensearch)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer OpenSearch rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer OpenSearch rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 OpenSearch makes it easy to ingest, search, visualize, and analyze your data.
 
@@ -35,9 +35,9 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://opensearch.org>
-* Documentation officielle de l'admin : <https://opensearch.org/docs/latest/>
-* Dépôt de code officiel de l'app : <https://github.com/opensearch-project/OpenSearch>
+* Site officiel de l’app : <https://opensearch.org>
+* Documentation officielle de l’admin : <https://opensearch.org/docs/latest/>
+* Dépôt de code officiel de l’app : <https://github.com/opensearch-project/OpenSearch>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_opensearch>
 * Signaler un bug : <https://github.com/YunoHost-Apps/opensearch_ynh/issues>
 
@@ -53,4 +53,4 @@ ou
 sudo yunohost app upgrade opensearch -u https://github.com/YunoHost-Apps/opensearch_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
