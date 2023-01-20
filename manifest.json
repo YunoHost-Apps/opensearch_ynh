@@ -3,10 +3,10 @@
     "id": "opensearch",
     "packaging_format": 1,
     "description": {
-        "en": "Open source distributed and RESTful search engine.",
-        "fr": "Moteur de recherche RESTful et open-source."
+        "en": "Open source distributed and RESTful search engine",
+        "fr": "Moteur de recherche RESTful et open-source"
     },
-    "version": "2.4.1~ynh1",
+    "version": "2.4.1~ynh2",
     "url": "https://github.com/opensearch-project/OpenSearch",
     "upstream": {
         "license": "Apache-2.0",
@@ -15,7 +15,7 @@
         "admindoc": "https://opensearch.org/docs/latest/",
         "code": "https://github.com/opensearch-project/OpenSearch"
     },
-    "license": "AGPL-3.0-or-later",
+    "license": "Apache-2.0",
     "maintainer": {
         "name": "fflorent",
         "email": "florent.git@zeteo.me"
@@ -24,9 +24,7 @@
         "yunohost": ">= 11.0.0"
     },
     "multi_instance": true,
-    "services": [
-        "nginx"
-    ],
+    "services": [],
     "arguments": {
         "install": []
     }

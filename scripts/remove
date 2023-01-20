@@ -76,14 +76,6 @@ ynh_script_progression --message="Removing pid directory..." --weight=1
 ynh_secure_remove --file="/run/$app"
 
 #=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Removing dependencies..." --weight=1
-
-# Remove metapackage and its dependencies
-ynh_remove_app_dependencies
-
-#=================================================
 # CLOSE A PORT
 #=================================================
 
@@ -102,6 +94,22 @@ ynh_script_progression --message="Removing the dedicated system user..." --weigh
 
 # Delete a system user
 ynh_system_user_delete --username=$app
+
+#=================================================
+# SPECIFIC REMOVE
+#=================================================
+# REMOVE VARIOUS FILES
+#=================================================
+ynh_script_progression --message="Removing various files..."
+
+if [ -e "/etc/sysctl.d/90-max_map_count-opensearch.conf" ]; then
+	ynh_secure_remove --file="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+	# Reload the kernel configuration.
+	if ! [ "${container:-}" = "lxc" ] # lxc doesn't allow sysctl to play with kernel options.
+	then
+		sysctl --system
+	fi
+fi
 
 #=================================================
 # END OF SCRIPT

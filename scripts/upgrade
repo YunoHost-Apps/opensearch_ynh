@@ -102,13 +102,6 @@ chmod -R o-rwx "$final_path"
 chown -R $app:$app "$final_path"
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
-
-ynh_install_app_dependencies $pkg_dependencies
-
-#=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
@@ -127,7 +120,7 @@ ynh_script_progression --message="Increasing maximum map count (sysctl)..."
 # Increase the maximum number of files inotify can monitor.
 cp -a ../conf/90-max_map_count-opensearch.conf /etc/sysctl.d/
 # Then, reload the kernel configuration.
-if ! IS_PACKAGE_CHECK   # LXC doesn't allow sysctl to play with kernel options.
+if ! [ "${container:-}" = "lxc" ] # lxc doesn't allow sysctl to play with kernel options.
 then
 	sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
 fi
