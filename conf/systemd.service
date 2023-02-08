@@ -7,6 +7,7 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
+RuntimeDirectory=__APP__
 Environment="OPENSEARCH_JAVA_HOME=__FINALPATH__/jdk"
 Environment="OPENSEARCH_PATH_CONF=__FINALPATH__/config"
 Environment="PID_DIR=/run/__APP__"

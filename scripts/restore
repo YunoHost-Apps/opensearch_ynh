@@ -75,15 +75,6 @@ chmod -R o-rwx "$datadir"
 chown -R $app:www-data "$datadir"
 
 #=================================================
-# CREATE PID DIRECTORY
-#=================================================
-
-mkdir -p "/run/$app"
-
-chmod 700 "/run/$app"
-chown $app:$app "/run/$app"
-
-#=================================================
 # SPECIFIC RESTORATION
 #=================================================
 # RESTORE VARIOUS FILES
