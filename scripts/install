@@ -88,15 +88,6 @@ chown -R $app:www-data "$datadir"
 
 
 #=================================================
-# CREATE PID DIRECTORY
-#=================================================
-
-mkdir -p "/run/$app"
-
-chmod 700 "/run/$app"
-chown $app:$app "/run/$app"
-
-#=================================================
 # ADD CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Adding the configuration files..." --weight=1
