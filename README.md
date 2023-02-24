@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # OpenSearch for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/opensearch.svg)](https://dash.yunohost.org/appci/app/opensearch) ![Working status](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)
+
 [![Install OpenSearch with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=opensearch)
 
 *[Lire ce readme en français.](./README_fr.md)*
