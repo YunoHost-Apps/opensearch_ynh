@@ -1,5 +1,5 @@
-SOURCE_URL=https://artifacts.opensearch.org/releases/bundle/opensearch/2.5.0/opensearch-2.5.0-linux-x64.tar.gz
-SOURCE_SUM=58f0f94ad5416ff84afa43ffd709104012914266bfb9a3fef142de2055012f55
+SOURCE_URL=https://artifacts.opensearch.org/releases/bundle/opensearch/2.6.0/opensearch-2.6.0-linux-x64.tar.gz
+SOURCE_SUM=a89ae0585f09091e239a7176dfd81a891af863b4e29f44f2623cf17754385a4a
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
