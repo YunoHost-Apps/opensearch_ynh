@@ -39,7 +39,7 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 * Official app website: <https://opensearch.org>
 * Official admin documentation: <https://opensearch.org/docs/latest/>
 * Upstream app code repository: <https://github.com/opensearch-project/OpenSearch>
-* YunoHost documentation for this app: <https://yunohost.org/app_opensearch>
+* YunoHost Store: <https://apps.yunohost.org/app/opensearch>
 * Report a bug: <https://github.com/YunoHost-Apps/opensearch_ynh/issues>
 
 ## Developer info
