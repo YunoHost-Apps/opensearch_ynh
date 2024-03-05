@@ -11,7 +11,7 @@ http.port: __PORT__
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-path.data: __DATADIR__
+path.data: __DATA_DIR__
 
 #
 # Unless you have already configured a cluster, you should set
