@@ -46,10 +46,11 @@ chown "$app:$app" "$install_dir/config/opensearch.yml" "$install_dir/config/jvm.
 #=================================================
 ynh_script_progression --message="Increasing maximum map count (sysctl)..."
 
-# Increase the maximum number of files inotify can monitor.
-ynh_add_config --template="90-max_map_count-opensearch.conf" --destination="/etc/sysctl.d/"
-# Then, reload the kernel configuration.
-if ! [ "${container:-}" = "lxc" ]; then # lxc doesn't allow sysctl to play with kernel options.
+if [ "${container:-}" != "lxc" ]; then # lxc doesn't allow sysctl to play with kernel options.
+    # Increase the maximum number of files inotify can monitor.
+    ynh_add_config --template="90-max_map_count-opensearch.conf" --destination="/etc/sysctl.d/"
+
+    # Then, reload the kernel configuration.
     sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
 fi
 

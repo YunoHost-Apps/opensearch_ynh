@@ -37,7 +37,9 @@ ynh_backup --src_path="/etc/logrotate.d/$app"
 # BACKUP VARIOUS FILES
 #=================================================
 
-ynh_backup --src_path="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+if [ "${container:-}" != "lxc" ]; then # lxc doesn't allow sysctl to play with kernel options.
+    ynh_backup --src_path="/etc/sysctl.d/90-max_map_count-opensearch.conf"
+fi
 
 #=================================================
 # BACKUP SYSTEMD
