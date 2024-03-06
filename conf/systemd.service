@@ -8,12 +8,12 @@ Type=simple
 User=__APP__
 Group=__APP__
 RuntimeDirectory=__APP__
-Environment="OPENSEARCH_JAVA_HOME=__FINALPATH__/jdk"
-Environment="OPENSEARCH_PATH_CONF=__FINALPATH__/config"
+Environment="OPENSEARCH_JAVA_HOME=__INSTALL_DIR__/jdk"
+Environment="OPENSEARCH_PATH_CONF=__INSTALL_DIR__/config"
 Environment="PID_DIR=/run/__APP__"
 Environment="OPENSEARCH_SD_NOTIFY=true"
-WorkingDirectory=__FINALPATH__/
-ExecStart=__FINALPATH__/bin/opensearch -p ${PID_DIR}/__APP__.pid --quiet
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/bin/opensearch -p ${PID_DIR}/__APP__.pid --quiet
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
