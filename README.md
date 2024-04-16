@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install OpenSearch with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=opensearch)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install OpenSearch quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -29,7 +29,7 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 - Not scalable for now
 
 
-**Shipped version:** 2.9.0~ynh1
+**Shipped version:** 2.9.0~ynh2
 
 **Demo:** <https://playground.opensearch.org/app/home>
 ## Documentation and resources

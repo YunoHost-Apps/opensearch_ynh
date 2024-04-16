@@ -29,7 +29,7 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 - Not scalable for now
 
 
-**Version incluse :** 2.9.0~ynh1
+**Version incluse :** 2.9.0~ynh2
 
 **Démo :** <https://playground.opensearch.org/app/home>
 ## Documentations et ressources
