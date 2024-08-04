@@ -7,7 +7,7 @@ name = "OpenSearch"
 description.en = "Open source distributed and RESTful search engine"
 description.fr = "Moteur de recherche RESTful et open-source"
 
-version = "2.9.0~ynh2"
+version = "2.9.0~ynh3"
 
 maintainers = ["fflorent"]
 
@@ -20,7 +20,7 @@ code = "https://github.com/opensearch-project/OpenSearch"
 cpe = "cpe:2.3:a:amazon:opensearch"
 
 [integration]
-yunohost = ">= 11.0.0"
+yunohost = ">= 11.2.20"
 architectures = ["amd64", "arm64"]
 multi_instance = true
 ldap = "not_relevant"
@@ -37,8 +37,6 @@ ram.runtime = "600M"
     amd64.sha256 = "03d623c2d99a7100c2f0faddc8ffda8ba27eae8aa63ff6f3f7dad2337be8b68c"
     arm64.url = "https://artifacts.opensearch.org/releases/bundle/opensearch/2.9.0/opensearch-2.9.0-linux-arm64.tar.gz"
     arm64.sha256 = "ba6045e58d433f64f09d92565e308553647bfd3f1193346a1716f7f66e4aad5a"
-
-    # FIXME: autoupdate
 
     [resources.system_user]
 
