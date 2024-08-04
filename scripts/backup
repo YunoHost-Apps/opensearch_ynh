@@ -26,24 +26,14 @@ ynh_backup --src_path="$install_dir"
 ynh_backup --src_path="$data_dir" --is_big
 
 #=================================================
-# SPECIFIC BACKUP
-#=================================================
-# BACKUP LOGROTATE
+# SYSTEM CONFIGURATION
 #=================================================
 
 ynh_backup --src_path="/etc/logrotate.d/$app"
 
-#=================================================
-# BACKUP VARIOUS FILES
-#=================================================
-
 if [ "${container:-}" != "lxc" ]; then # lxc doesn't allow sysctl to play with kernel options.
     ynh_backup --src_path="/etc/sysctl.d/90-max_map_count-opensearch.conf"
 fi
-
-#=================================================
-# BACKUP SYSTEMD
-#=================================================
 
 ynh_backup --src_path="/etc/systemd/system/$app.service"
 
