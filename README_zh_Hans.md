@@ -5,7 +5,7 @@
 
 # YunoHost 上的 OpenSearch
 
-[![集成程度](https://dash.yunohost.org/integration/opensearch.svg)](https://dash.yunohost.org/appci/app/opensearch) ![工作状态](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/opensearch.svg)](https://ci-apps.yunohost.org/ci/apps/opensearch/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)
 
 [![使用 YunoHost 安装 OpenSearch](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=opensearch)
 
@@ -29,7 +29,7 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 - Not scalable for now
 
 
-**分发版本：** 2.9.0~ynh2
+**分发版本：** 2.9.0~ynh3
 
 **演示：** <https://playground.opensearch.org/app/home>
 ## 文档与资源

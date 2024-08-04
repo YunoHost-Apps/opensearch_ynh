@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # OpenSearch pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/opensearch.svg)](https://dash.yunohost.org/appci/app/opensearch) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/opensearch.svg)](https://ci-apps.yunohost.org/ci/apps/opensearch/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/opensearch.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/opensearch.maintain.svg)
 
 [![Installer OpenSearch avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=opensearch)
 
@@ -29,7 +29,7 @@ OpenSearch is a scalable, flexible, and extensible open-source software suite fo
 - Not scalable for now
 
 
-**Version incluse :** 2.9.0~ynh2
+**Version incluse :** 2.9.0~ynh3
 
 **Démo :** <https://playground.opensearch.org/app/home>
 ## Documentations et ressources
