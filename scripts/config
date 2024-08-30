@@ -8,15 +8,9 @@
 # (validation of several interdependent fields, specific getter/setter for a value,
 # display dynamic informations or choices, pre-loading of config type .cube... ).
 
-#=================================================
-# GENERIC STARTING
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source /usr/share/yunohost/helpers
 
-ynh_abort_if_errors
+#REMOVEME? ynh_abort_if_errors
 
 #=================================================
 # RETRIEVE ARGUMENTS
@@ -29,11 +23,11 @@ final_path=$(ynh_app_setting_get $app final_path)
 #=================================================
 
 get__xms() {
-    ynh_app_setting_get --app=$app --key=xms
+    ynh_app_setting_get --key=xms
 }
 
 get__xmx() {
-    ynh_app_setting_get --app=$app --key=xmx
+    ynh_app_setting_get --key=xmx
 }
 
 #=================================================
@@ -45,22 +39,20 @@ get__xmx() {
 #=================================================
 
 regenerate_jvm_options() {
-    ynh_add_config --template="jvm.options" --destination="$final_path/config/jvm.options.d/yunohost.options"
+    ynh_config_add --template="jvm.options" --destination="$final_path/config/jvm.options.d/yunohost.options"
     chown $app:$app "$final_path/config/jvm.options.d/yunohost.options"
     chmod 400 "$final_path/config/jvm.options.d/yunohost.options"
 }
 
 set__xms() {
-    ynh_app_setting_set --app=$app --key=xms --value=$xms
+    ynh_app_setting_set --key=xms --value=$xms
     regenerate_jvm_options
 }
 
 set__xmx() {
-    ynh_app_setting_set --app=$app --key=xmx --value=$xmx
+    ynh_app_setting_set --key=xmx --value=$xmx
     regenerate_jvm_options
 }
 
-#=================================================
-# GENERIC FINALIZATION
 #=================================================
 ynh_app_config_run $1
