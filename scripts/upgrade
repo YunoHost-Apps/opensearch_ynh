@@ -40,7 +40,7 @@ if [ "${container:-}" != "lxc" ]; then # lxc doesn't allow sysctl to play with k
     ynh_config_add --template="90-max_map_count-opensearch.conf" --destination="/etc/sysctl.d/90-max_map_count-$app.conf"
     
     # Then, reload the kernel configuration.
-    sysctl -p /etc/sysctl.d/90-max_map_count-opensearch.conf
+    sysctl -p /etc/sysctl.d/90-max_map_count-$app.conf
 fi
 
 #=================================================
@@ -50,7 +50,7 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 
 # Create a dedicated systemd config
 ynh_config_add_systemd
-yunohost service add "$app" --description="OpenSearch - Open source distributed and RESTful search engine" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Distributed and RESTful search engine" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage app-specific logfile(s)
 ynh_config_add_logrotate

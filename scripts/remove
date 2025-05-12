@@ -28,8 +28,8 @@ ynh_config_remove_logrotate
 #=================================================
 ynh_script_progression "Removing various files..."
 
-if [ -e "/etc/sysctl.d/90-max_map_count-opensearch.conf" ]; then
-    ynh_safe_rm "/etc/sysctl.d/90-max_map_count-opensearch.conf"
+if [ -e "/etc/sysctl.d/90-max_map_count-$app.conf" ]; then
+    ynh_safe_rm "/etc/sysctl.d/90-max_map_count-$app.conf"
     # Reload the kernel configuration.
     if ! [ "${container:-}" = "lxc" ]; then # lxc doesn't allow sysctl to play with kernel options.
         sysctl --system
