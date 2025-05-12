@@ -7,7 +7,7 @@ name = "OpenSearch"
 description.en = "Open source distributed and RESTful search engine"
 description.fr = "Moteur de recherche RESTful et open-source"
 
-version = "2.9.0~ynh3"
+version = "2.9.0~ynh4"
 
 maintainers = ["fflorent"]
 
