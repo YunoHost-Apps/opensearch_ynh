@@ -7,7 +7,7 @@ name = "OpenSearch"
 description.en = "Distributed and RESTful search engine"
 description.fr = "Moteur de recherche RESTful"
 
-version = "2.9.0~ynh4"
+version = "3.1.0~ynh1"
 
 maintainers = ["fflorent"]
 
@@ -36,10 +36,10 @@ ram.runtime = "600M"
 
 [resources]
     [resources.sources.main]
-    amd64.url = "https://artifacts.opensearch.org/releases/bundle/opensearch/2.9.0/opensearch-2.9.0-linux-x64.tar.gz"
-    amd64.sha256 = "03d623c2d99a7100c2f0faddc8ffda8ba27eae8aa63ff6f3f7dad2337be8b68c"
-    arm64.url = "https://artifacts.opensearch.org/releases/bundle/opensearch/2.9.0/opensearch-2.9.0-linux-arm64.tar.gz"
-    arm64.sha256 = "ba6045e58d433f64f09d92565e308553647bfd3f1193346a1716f7f66e4aad5a"
+    amd64.url = "https://artifacts.opensearch.org/releases/bundle/opensearch/3.1.0/opensearch-3.1.0-linux-x64.tar.gz"
+    amd64.sha256 = "a5eb65b1fab3ff4e0befba8cf48174e8bc2daee6d85ffd5b5c4ccf5cbf427eb6"
+    arm64.url = "https://artifacts.opensearch.org/releases/bundle/opensearch/3.1.0/opensearch-3.1.0-linux-arm64.tar.gz"
+    arm64.sha256 = "a41a5016b3405910f35b707d98fe13b1c18bcd2d631281df0ca1c6fa18595590"
 
     [resources.system_user]
 
