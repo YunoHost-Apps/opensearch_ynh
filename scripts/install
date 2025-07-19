@@ -11,9 +11,11 @@ source /usr/share/yunohost/helpers
 # DEFAULT VALUES FOR CONFIGURATION
 #=================================================
 
-ynh_app_setting_set --key="xms" --value="256m"
+xms=256m
+ynh_app_setting_set --app="$app" --key="xms" --value="$xms"
 
-ynh_app_setting_set --key="xmx" --value="1g"
+xmx=1g
+ynh_app_setting_set --app="$app" --key="xmx" --value="$xmx"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
