@@ -22,4 +22,3 @@ discovery.type: single-node
 # If you previously disabled the security plugin in opensearch.yml,
 # be sure to re-enable it. Otherwise you can skip this setting.
 plugins.security.disabled: true
-
