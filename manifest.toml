@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "opensearch"
 name = "OpenSearch"
-description.en = "Open source distributed and RESTful search engine"
-description.fr = "Moteur de recherche RESTful et open-source"
+description.en = "Distributed and RESTful search engine"
+description.fr = "Moteur de recherche RESTful"
 
 version = "2.9.0~ynh4"
 

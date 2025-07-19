@@ -11,11 +11,9 @@ source /usr/share/yunohost/helpers
 # DEFAULT VALUES FOR CONFIGURATION
 #=================================================
 
-xms=256m
-ynh_app_setting_set --key="xms" --value="$xms"
+ynh_app_setting_set --key="xms" --value="256m"
 
-xmx=1g
-ynh_app_setting_set --key="xmx" --value="$xmx"
+ynh_app_setting_set --key="xmx" --value="1g"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -53,6 +51,7 @@ ynh_script_progression "Adding system configurations related to $app..."
 
 # Create a dedicated systemd config
 ynh_config_add_systemd
+
 yunohost service add "$app" --description="Distributed and RESTful search engine" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage application logfile(s)
