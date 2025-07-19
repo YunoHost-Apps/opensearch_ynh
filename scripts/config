@@ -15,12 +15,11 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 get__xms() {
-    ynh_app_setting_get --key=xms
+    ynh_app_setting_get --app=$app --key=xms
 }
 
 get__xmx() {
-    ynh_app_setting_get --key=xmx
-}
+    ynh_app_setting_get --app=$app --key=xmx
 
 #=================================================
 # SPECIFIC SETTERS FOR TOML SHORT KEYS
