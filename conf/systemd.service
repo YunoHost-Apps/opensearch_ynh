@@ -1,5 +1,5 @@
 [Unit]
-Description=OpenSearch - Open source distributed and RESTful search engine
+Description=OpenSearch: Open source distributed and RESTful search engine
 Documentation=https://opensearch.org
 After=network.target
 
