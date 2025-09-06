@@ -20,6 +20,7 @@ get__xms() {
 
 get__xmx() {
     ynh_app_setting_get --app=$app --key=xmx
+}
 
 #=================================================
 # SPECIFIC SETTERS FOR TOML SHORT KEYS
