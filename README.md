@@ -8,11 +8,11 @@ It shall NOT be edited by hand.
   OpenSearch, packaged for YunoHost
 </h1>
 
-Open source distributed and RESTful search engine
+Distributed and RESTful search engine
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://opensearch.org)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://playground.opensearch.org/app/home)
-[![Version: 2.9.0~ynh4](https://img.shields.io/badge/Version-2.9.0~ynh4-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/opensearch/)
+[![Version: 3.1.0~ynh1](https://img.shields.io/badge/Version-3.1.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/opensearch/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/opensearch"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
